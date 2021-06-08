@@ -1,0 +1,84 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.12",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2020.12",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.12",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.12",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2020.12",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.12",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2020.12"
+  },
+  "peregrine": {
+    "sidecar": "False"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "google": {
+    "enabled": "no"
+  },
+  "jupyterhub": {
+    "enabled": "no"
+  },
+  "global": {
+    "environment": "edcprodv2",
+    "hostname": "portal.occ-data.org",
+    "revproxy_arn": "arn:aws:acm:us-east-1:302170346065:certificate/80374dc8-e2e9-4698-8458-82cafd6f6bc8",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/envdictionary/1.0.5/schema.json",
+    "portal_app": "gitops",
+    "sync_from_dbgap": "False",
+    "useryaml_s3path": "s3://cdis-gen3-users/edc/user.yaml",
+    "netpolicy": "on"
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "presigned-url-fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "sheepdog": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    }
+  },
+  "canary": {
+    "default": 0
+  }
+}

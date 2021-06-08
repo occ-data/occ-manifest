@@ -38,7 +38,7 @@
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/envdictionary/1.0.5/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
-    "useryaml_s3path": "s3://cdis-gen3-users/edc/user.yaml",
+    "useryaml_s3path": "s3://occ-dev-gen3-users/edc/user.yaml",
     "netpolicy": "on"
   },
   "scaling": {

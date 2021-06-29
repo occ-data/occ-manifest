@@ -1,0 +1,64 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "versions": {
+    "arborist": "quay.io/cdis/arborist:2021.07",
+    "fence": "quay.io/cdis/fence:2021.07",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "hatchery": "quay.io/cdis/hatchery:2021.07",
+    "portal": "quay.io/cdis/data-portal:2021.07",
+    "revproxy": "quay.io/cdis/nginx:2021.07",
+    "wts": "quay.io/cdis/workspace-token-service:2021.07"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "google": {
+    "enabled": "no"
+  },
+  "global": {
+    "environment": "spoke_template",
+    "hostname": "spoke_template.workspace.occ-pla.net",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ndhdictionary/master/schema.json",
+    "portal_app": "gitops",
+    "sync_from_dbgap": "False",
+    "kube_bucket": "kube-spoke_template-gen3",
+    "logs_bucket": "logs-spoke_template-gen3",
+    "useryaml_s3path": "s3://occ-dev-gen3-users/spoke-user/user.yaml",
+    "netpolicy": "on",
+    "lb_type": "public"
+  },
+  "portal": {
+    "GEN3_BUNDLE": "workspace"
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    }
+  },
+  "canary": {
+    "default": 0
+  }
+}

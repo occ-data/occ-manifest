@@ -6,7 +6,6 @@
   "versions": {
     "arborist": "quay.io/cdis/arborist:2021.07",
     "fence": "quay.io/cdis/fence:2021.07",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "hatchery": "quay.io/cdis/hatchery:2021.07",
     "portal": "quay.io/cdis/data-portal:2021.07",
     "revproxy": "quay.io/cdis/nginx:2021.07",
@@ -24,11 +23,12 @@
   "global": {
     "environment": "spoke_template",
     "hostname": "spoke_template.workspace.occ-pla.net",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/ndhdictionary/master/schema.json",
+    "dictionary_url": "",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "kube_bucket": "kube-spoke_template-gen3",
     "logs_bucket": "logs-spoke_template-gen3",
+    # replace the useryaml_s3path with your own cloud provider storage path to store user.yaml files
     "useryaml_s3path": "s3://occ-dev-gen3-users/spoke-user/user.yaml",
     "netpolicy": "on",
     "lb_type": "public"
